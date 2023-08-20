@@ -98,8 +98,10 @@ h1{
 #chat-box{
 	border: 1px solid  var(--vscode-input-foreground);
 	display: grid;
-	grid-template-rows: 9fr 1fr;
-	height: 90vh;
+	grid-template-rows: 10fr 1fr;
+	height: 87vh;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 #chat-input{
@@ -111,4 +113,36 @@ h1{
 #chat-input-area{
 	display: grid;
 	grid-template-columns: 9fr 1fr;
+}
+
+#chat-display{
+	padding-top: 2%;
+	overflow-y: scroll;
+}
+
+.message-div-incoming{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	padding: 2.5% 5% 2.5% 5%;
+}
+
+.message-div-outgoing{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	padding: 2.5% 5% 2.5% 5%;
+}
+
+.message-box{
+	padding: 5% 2% 5% 2%;
+	text-align: left;
+}
+
+.message-incoming{
+	background-color: var(--vscode-button-background);
+	color:var(--vscode-button-foreground);
+}
+
+.message-outgoing{
+	background-color:var(--vscode-dropdown-foreground);
+	color:var(--vscode-dropdown-background);
 }
