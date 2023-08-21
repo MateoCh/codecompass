@@ -3,11 +3,22 @@
 import * as vscode from 'vscode';
 import { HelloWorldPanel } from './helloWorldPanel';
 import { SidebarProvider } from './SidebarProvider';
+// import { OpenAI } from "langchain/llms/openai";
+// import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "codecompass" is now active!');
+	// const embeddings = new OpenAIEmbeddings();
+	// const res = await embeddings.embedQuery("Hello world");
+	// console.log(res);
+	// const llm = new OpenAI({
+	// 	openAIApiKey:'',
+	// 	temperature:0.9
+	// });
+	// const result = await llm.predict("What would be a good company name for a company that makes colorful socks?");
+	// console.log(result);
 	const sidebarProvider = new SidebarProvider(context.extensionUri);
 	context.subscriptions.push(
 		vscode.window.registerWebviewViewProvider(
