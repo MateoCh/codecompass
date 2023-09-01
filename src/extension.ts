@@ -4,6 +4,7 @@ import * as vscode from 'vscode';
 import { HelloWorldPanel } from './helloWorldPanel';
 import { SidebarProvider } from './SidebarProvider';
 import { LocalVectorDbService } from './services/LocalDbService';
+import { FileExplorerService } from './services/FileExplorerService';
 // import { OpenAI } from "langchain/llms/openai";
 // import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 
@@ -11,7 +12,12 @@ import { LocalVectorDbService } from './services/LocalDbService';
 // Your extension is activated the very first time the command is executed
 export async function activate(context: vscode.ExtensionContext) {
 	const db= LocalVectorDbService.instance;
+	const fse= FileExplorerService.instance;
 	await db.initDb();
+	fse.printCurDir();
+	fse.changeDir('/Users/mateochaparro/Documents/hackatonDevSavant/codecompass/src');
+	fse.printCurDir();
+	fse.exploreDir();
 	console.log('Congratulations, your extension "codecompass" is now active!');
 	// const embeddings = new OpenAIEmbeddings();
 	// const res = await embeddings.embedQuery("Hello world");
