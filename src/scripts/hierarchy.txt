@@ -1,0 +1,9 @@
++ content/
+  - main.py
+  - pets.txt
+  - pets2.txt
+  - pets3.txt
+  - pets4.txt
+  - pets5.txt
+- main.py
+- prueba.py
